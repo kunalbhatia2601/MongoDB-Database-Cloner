@@ -68,6 +68,14 @@ async function connectToMongoDB(connectionString) {
 
 // API Routes
 
+app.get('/crud', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'crud.html'));
+});
+
+app.get('/crud.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'crud.html'));
+});
+
 // Test MongoDB connection and get databases
 app.post('/api/test-connection', async (req, res) => {
     const { connectionString } = req.body;
